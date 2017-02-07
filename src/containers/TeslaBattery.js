@@ -1,11 +1,20 @@
 import React from 'react';
 import './TeslaBattery.css';
+import TeslaCar from '../components/TeslaCar';
 
 class TeslaBattery extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      wheelsize: 19  
+    }
+  }
+
   render() {
     return (
       <form className="tesla-battery">
         <h1>Range Per Charge</h1>
+        <TeslaCar wheelsize={this.state.wheelsize} />
         <div className="tesla-battery__notice">
           <p>
             The actual amount of range that you experience will vary based 
