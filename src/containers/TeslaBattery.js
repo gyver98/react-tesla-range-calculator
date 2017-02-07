@@ -5,7 +5,7 @@ class TeslaBattery extends React.Component {
   render() {
     return (
       <form className="tesla-battery">
-        <h1>Tesla Range Calculator</h1>
+        <h1>Range Per Charge</h1>
         <div className="tesla-battery__notice">
           <p>
             The actual amount of range that you experience will vary based 

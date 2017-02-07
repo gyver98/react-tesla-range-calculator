@@ -6,9 +6,11 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <Header />
-        <TeslaBattery />
+        <div className="wrapper">
+          <TeslaBattery />
+        </div>
       </div>
     );
   }
