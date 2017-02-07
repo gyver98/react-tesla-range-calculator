@@ -1,13 +1,48 @@
 import React from 'react';
 import './TeslaBattery.css';
 import TeslaCar from '../components/TeslaCar';
+import TeslaStats from '../components/TeslaStats';
+import {getModelData} from '../services/BatteryService';
 
 class TeslaBattery extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+    this.calculateStats = this.calculateStats.bind(this);
     this.state = {
-      wheelsize: 19  
+      wheelsize: 19,
+      carstats: []  
     }
+  }
+
+  calculateStats = (models, value) => {
+    const dataModels = getModelData();
+    return models.map(model => {
+      const { speed, temperature, climate, wheels } = value;
+      const miles = dataModels[model][wheels][climate ? 'on' : 'off'].speed[speed][temperature];
+      return {
+        model,
+        miles
+      };
+    });
+  }
+
+  componentDidMount() {
+    
+    const carModels = ['60', '60D', '75', '75D', '90D', 'P100D'];
+    const tesla = {
+      config: {
+        speed: 55,
+        temperature: 20,
+        climate: true,
+        wheels: 19
+      }
+    };
+        
+    // Fetch model info from BatteryService and calculate then update state
+    this.setState({
+      stats: this.calculateStats(carModels, tesla.config)
+    })    
+        
   }
 
   render() {
@@ -15,6 +50,7 @@ class TeslaBattery extends React.Component {
       <form className="tesla-battery">
         <h1>Range Per Charge</h1>
         <TeslaCar wheelsize={this.state.wheelsize} />
+        <TeslaStats />
         <div className="tesla-battery__notice">
           <p>
             The actual amount of range that you experience will vary based 
