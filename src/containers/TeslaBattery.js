@@ -37,10 +37,10 @@ class TeslaBattery extends React.Component {
         wheels: 19
       }
     };
-        
+       
     // Fetch model info from BatteryService and calculate then update state
     this.setState({
-      stats: this.calculateStats(carModels, tesla.config)
+      carstats: this.calculateStats(carModels, tesla.config)
     })    
         
   }
@@ -50,7 +50,7 @@ class TeslaBattery extends React.Component {
       <form className="tesla-battery">
         <h1>Range Per Charge</h1>
         <TeslaCar wheelsize={this.state.wheelsize} />
-        <TeslaStats />
+        <TeslaStats carstats={this.state.carstats} />
         <div className="tesla-battery__notice">
           <p>
             The actual amount of range that you experience will vary based 
