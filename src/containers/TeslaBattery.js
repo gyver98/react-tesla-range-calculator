@@ -111,9 +111,12 @@ class TeslaBattery extends React.Component {
               initValues={this.props.counterDefaultVal.temperature}
               increment={this.increment}
               decrement={this.decrement}
-          >
-          </TeslaCounter>
-          <TeslaClimate></TeslaClimate>
+            >
+            </TeslaCounter>
+            <TeslaClimate
+              limit={this.state.config.temperature > 10}
+            >
+            </TeslaClimate>
           </div>
         </div>
         <div className="tesla-battery__notice">
