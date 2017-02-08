@@ -11,8 +11,8 @@ const TeslaCounter = (props) => (
           <span>{ props.initValues.unit }</span>
         </p>
         <div className="tesla-counter__controls" tabindex="-1">
-          <button tabindex="-1"></button>
-          <button tabindex="-1"></button>
+          <button onClick={(e) => props.increment(e, props.initValues.title)} tabindex="-1"></button>
+          <button onClick={(e) => props.decrement(e, props.initValues.title)} tabindex="-1"></button>
         </div>
       </div >
     </div >
