@@ -105,7 +105,13 @@ class TeslaBattery extends React.Component {
           >
           </TeslaCounter>
           <div className="tesla-climate cf">
-            <TeslaCounter currentValue={this.state.config.temperature} initValues={this.props.counterDefaultVal.temperature}></TeslaCounter>
+            <TeslaCounter 
+              currentValue={this.state.config.temperature} 
+              initValues={this.props.counterDefaultVal.temperature}
+              increment={this.increment}
+              decrement={this.decrement}
+          >
+          </TeslaCounter>
           </div>
         </div>
         <div className="tesla-battery__notice">
