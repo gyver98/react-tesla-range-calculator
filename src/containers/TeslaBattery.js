@@ -4,6 +4,7 @@ import TeslaCar from '../components/TeslaCar';
 import TeslaStats from '../components/TeslaStats';
 import TeslaCounter from '../components/TeslaCounter';
 import TeslaClimate from '../components/TeslaClimate';
+import TeslaWheels from '../components/TeslaWheels';
 import { getModelData } from '../services/BatteryService';
 
 class TeslaBattery extends React.Component {
@@ -129,6 +130,7 @@ class TeslaBattery extends React.Component {
             >
             </TeslaClimate>
           </div>
+          <TeslaWheels></TeslaWheels>
         </div>
         <div className="tesla-battery__notice">
           <p>
