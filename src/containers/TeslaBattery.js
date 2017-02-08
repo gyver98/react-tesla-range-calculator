@@ -2,6 +2,7 @@ import React from 'react';
 import './TeslaBattery.css';
 import TeslaCar from '../components/TeslaCar';
 import TeslaStats from '../components/TeslaStats';
+import TeslaCounter from '../components/TeslaCounter';
 import {getModelData} from '../services/BatteryService';
 
 class TeslaBattery extends React.Component {
@@ -51,6 +52,12 @@ class TeslaBattery extends React.Component {
         <h1>Range Per Charge</h1>
         <TeslaCar wheelsize={this.state.wheelsize} />
         <TeslaStats carstats={this.state.carstats} />
+        <div className="tesla-controls cf">
+          <TeslaCounter></TeslaCounter>
+          <div className="tesla-climate cf">
+            <TeslaCounter></TeslaCounter>
+          </div>
+        </div>
         <div className="tesla-battery__notice">
           <p>
             The actual amount of range that you experience will vary based 
