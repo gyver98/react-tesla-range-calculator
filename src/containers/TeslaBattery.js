@@ -12,6 +12,7 @@ class TeslaBattery extends React.Component {
     this.calculateStats = this.calculateStats.bind(this);
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.state = {
       carstats: [],
       config: {
@@ -90,6 +91,14 @@ class TeslaBattery extends React.Component {
       this.setState({ config });
     }
   }
+  // aircon & heating click event handler
+  onChange() {
+    //debugger;
+    const newValue = !this.state.config.climate;
+    const config = {...this.state.config};
+    config['climate'] = newValue;
+    this.setState({ config });
+  }
 
   render() {
     return (
@@ -114,7 +123,9 @@ class TeslaBattery extends React.Component {
             >
             </TeslaCounter>
             <TeslaClimate
+              value={this.state.config.climate}
               limit={this.state.config.temperature > 10}
+              onChange={this.onChange}
             >
             </TeslaClimate>
           </div>
