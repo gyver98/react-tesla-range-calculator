@@ -12,7 +12,7 @@ const TeslaClimate = (props) => (
         type="checkbox"
         name="climate"
         checked={props.value}
-        onChange={() => {props.onChangeClimate()}}
+        onChange={() => {props.handleChangeClimate()}}
       />
     </label>
   </div>
@@ -21,7 +21,7 @@ const TeslaClimate = (props) => (
 TeslaClimate.propTypes = {
   value: React.PropTypes.bool,
   limit: React.PropTypes.bool,
-  onChangeClimate: React.PropTypes.func
+  handleChangeClimate: React.PropTypes.func
 }
 
 export default TeslaClimate;
