@@ -29,7 +29,6 @@ class TeslaBattery extends React.Component {
   }
 
   calculateStats = (models, value) => {
-    debugger;
     const dataModels = getModelData();
     return models.map(model => {
       const { speed, temperature, climate, wheels } = value;
@@ -42,14 +41,12 @@ class TeslaBattery extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
      this.statsUpdate(); 
   }
 
   statsUpdate() {
     const carModels = ['60', '60D', '75', '75D', '90D', 'P100D'];
     // Fetch model info from BatteryService and calculate then update state
-    debugger;
     this.setState({
       carstats: this.calculateStats(carModels, this.state.config)
     })  
@@ -76,8 +73,7 @@ class TeslaBattery extends React.Component {
       // update config state
       title === 'Speed' ? config['speed'] = newValue : config['temperature'] = newValue;
       // update our state
-      this.setState({ config });
-      this.statsUpdate();
+      this.setState({ config }, () => {this.statsUpdate()});
     }
   }
   decrement(e, title) {
@@ -100,8 +96,7 @@ class TeslaBattery extends React.Component {
       // update config state
       title === 'Speed' ? config['speed'] = newValue : config['temperature'] = newValue;
       // update our state
-      this.setState({ config });
-      this.statsUpdate();
+      this.setState({ config }, () => {this.statsUpdate()});
     }
   }
   // aircon & heating click event handler
@@ -110,8 +105,7 @@ class TeslaBattery extends React.Component {
     const newValue = !this.state.config.climate;
     const config = {...this.state.config};
     config['climate'] = newValue;
-    this.setState({ config });
-    this.statsUpdate();
+    this.setState({ config }, () => {this.statsUpdate()});
   }
 
   // Wheels click event handler
@@ -119,8 +113,7 @@ class TeslaBattery extends React.Component {
     const newValue = size;
     const config = {...this.state.config};
     config['wheels'] = newValue;
-    this.setState({ config });
-    this.statsUpdate();
+    this.setState({ config }, () => {this.statsUpdate()});
   }
 
   render() {
