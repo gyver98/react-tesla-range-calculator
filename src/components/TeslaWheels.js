@@ -6,7 +6,7 @@ function LabelLists(props) {
   const changeHandler = props.wheels.onChangeWheels;
   const sizes = [19, 21];
   const LabelItems = sizes.map(size => (
-    <label className={`tesla-wheels__item tesla-wheels__item--${size} ${value === size ? 'tesla-wheels__item--active' : '' }`}>
+    <label key={size} className={`tesla-wheels__item tesla-wheels__item--${size} ${value === size ? 'tesla-wheels__item--active' : '' }`}>
       <input
         type="radio"
         name="wheelsize"
