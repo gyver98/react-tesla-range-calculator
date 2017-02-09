@@ -1,7 +1,7 @@
 import React from 'react';
 import './TeslaWheels.css';
 
-function LabelLists(props) {
+const LabelLists = (props) => {
   const value = props.wheels.value;
   const changeHandler = props.wheels.onChangeWheels;
   const sizes = [19, 21];
