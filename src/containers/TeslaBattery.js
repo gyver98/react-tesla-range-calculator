@@ -14,6 +14,8 @@ class TeslaBattery extends React.Component {
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.onChangeWheels = this.onChangeWheels.bind(this);
+
     this.state = {
       carstats: [],
       config: {
@@ -101,6 +103,14 @@ class TeslaBattery extends React.Component {
     this.setState({ config });
   }
 
+  // Wheels click event handler
+  onChangeWheels(size) {
+    const newValue = size;
+    const config = {...this.state.config};
+    config['wheels'] = newValue;
+    this.setState({ config });
+  }
+
   render() {
     return (
       <form className="tesla-battery">
@@ -130,7 +140,11 @@ class TeslaBattery extends React.Component {
             >
             </TeslaClimate>
           </div>
-          <TeslaWheels></TeslaWheels>
+          <TeslaWheels
+            value={this.state.config.wheels}
+            onChangeWheels={this.onChangeWheels}
+          >
+          </TeslaWheels>
         </div>
         <div className="tesla-battery__notice">
           <p>
