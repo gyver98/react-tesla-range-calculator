@@ -35,4 +35,9 @@ const TeslaWheels = (props) => (
   </div>
 );
 
+TeslaWheels.propTypes = {
+  value: React.PropTypes.number,
+  onChangeWheels: React.PropTypes.func
+}
+
 export default TeslaWheels;

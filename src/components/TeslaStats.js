@@ -15,7 +15,10 @@ const TeslaStats = (props) => {
     </ul>
   </div>
   )
-    
 };
+
+TeslaStats.propTypes = {
+  carstats: React.PropTypes.array
+}
 
 export default TeslaStats

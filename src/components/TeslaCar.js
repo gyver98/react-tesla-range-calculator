@@ -10,4 +10,8 @@ const TeslaCar = (props) => (
   </div>
 );
 
+TeslaCar.propTypes = {
+  wheelsize: React.PropTypes.number
+}
+
 export default TeslaCar;

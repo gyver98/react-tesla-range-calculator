@@ -11,13 +11,7 @@
     letter-spacing: 3px;
 }  
  
-.tesla-battery__notice {
-    margin: 20px 0;
-    font-size: 15px;
-    color: #666;
-    line-height: 20px;
-} 
-  
+
 .tesla-climate-container {
   float: left;
   width: 420px;

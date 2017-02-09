@@ -1,9 +1,6 @@
 import React from 'react';
 import './TeslaClimate.css';
 
-//const limit = 10;
-const value = true;
-//const onChange = (value)
 const TeslaClimate = (props) => (
   <div className="tesla-climate">
     <label
@@ -14,11 +11,17 @@ const TeslaClimate = (props) => (
       <input
         type="checkbox"
         name="climate"
-        checked={value}
+        checked={props.value}
         onChange={() => {props.onChangeClimate()}}
       />
     </label>
   </div>
 );
+
+TeslaClimate.propTypes = {
+  value: React.PropTypes.bool,
+  limit: React.PropTypes.bool,
+  onChangeClimate: React.PropTypes.func
+}
 
 export default TeslaClimate;
