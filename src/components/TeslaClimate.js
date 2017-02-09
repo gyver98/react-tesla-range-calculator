@@ -15,7 +15,7 @@ const TeslaClimate = (props) => (
         type="checkbox"
         name="climate"
         checked={value}
-        onChange={() => {props.onChange()}}
+        onChange={() => {props.onChangeClimate()}}
       />
     </label>
   </div>

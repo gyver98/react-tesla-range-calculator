@@ -14,7 +14,7 @@ function LabelLists(props) {
         checked={value === size} 
         onChange={() => {changeHandler(size)}} />
       <p>
-        {size}
+        {size}"
       </p>
     </label> 
     )

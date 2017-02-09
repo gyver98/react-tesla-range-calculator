@@ -13,7 +13,7 @@ class TeslaBattery extends React.Component {
     this.calculateStats = this.calculateStats.bind(this);
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.onChangeClimate = this.onChangeClimate.bind(this);
     this.onChangeWheels = this.onChangeWheels.bind(this);
     this.statsUpdate = this.statsUpdate.bind(this);
 
@@ -100,19 +100,16 @@ class TeslaBattery extends React.Component {
     }
   }
   // aircon & heating click event handler
-  onChange() {
-    //debugger;
-    const newValue = !this.state.config.climate;
+  onChangeClimate() {
     const config = {...this.state.config};
-    config['climate'] = newValue;
+    config['climate'] = !this.state.config.climate;
     this.setState({ config }, () => {this.statsUpdate()});
   }
 
   // Wheels click event handler
   onChangeWheels(size) {
-    const newValue = size;
     const config = {...this.state.config};
-    config['wheels'] = newValue;
+    config['wheels'] = size;
     this.setState({ config }, () => {this.statsUpdate()});
   }
 
@@ -135,20 +132,17 @@ class TeslaBattery extends React.Component {
               initValues={this.props.counterDefaultVal.temperature}
               increment={this.increment}
               decrement={this.decrement}
-            >
-            </TeslaCounter>
+            />
             <TeslaClimate
               value={this.state.config.climate}
               limit={this.state.config.temperature > 10}
-              onChange={this.onChange}
-            >
-            </TeslaClimate>
+              onChangeClimate={this.onChangeClimate}
+            />
           </div>
           <TeslaWheels
             value={this.state.config.wheels}
             onChangeWheels={this.onChangeWheels}
-          >
-          </TeslaWheels>
+          />
         </div>
         <div className="tesla-battery__notice">
           <p>
