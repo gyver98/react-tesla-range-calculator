@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import TeslaBattery from './containers/TeslaBattery';
 import Header from './components/Header';
 import './App.css';
-//import * as reducers from './reducers';
+import reducers from './reducers';
 
-//const reducer = combineReducers(reducers);
+const reducer = combineReducers(reducers);
 //const store = createStore(reducer);
 
 const counterDefaultVal = {
