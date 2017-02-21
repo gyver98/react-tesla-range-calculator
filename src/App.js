@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 import TeslaBattery from './containers/TeslaBattery';
 import Header from './components/Header';
 import './App.css';
-import reducers from './reducers';
-
-const reducer = combineReducers(reducers);
-const store = createStore(reducer);
-
+//import reducers from './reducers';
+import config from './reducers/config';
+//const reducer = combineReducers(reducers);
+const store = createStore(config);
+debugger;
 const counterDefaultVal = {
   speed: {
     title: "Speed",
