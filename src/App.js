@@ -7,7 +7,7 @@ import './App.css';
 import reducers from './reducers';
 
 const reducer = combineReducers(reducers);
-//const store = createStore(reducer);
+const store = createStore(reducer);
 
 const counterDefaultVal = {
   speed: {
@@ -32,7 +32,7 @@ class App extends Component {
       <div>
         <Header />
         <div className="wrapper">
-          <TeslaBattery counterDefaultVal={counterDefaultVal} />
+          <h1>Hello Redux</h1>
         </div>
       </div>
     );

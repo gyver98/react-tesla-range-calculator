@@ -1,4 +1,4 @@
-const config = (state = {}, action) => {
+const config = (state, action) => {
   switch (action.type) {
     case 'CHANGE_CLIMATE':
       return Object.assign({}, state, {
@@ -6,7 +6,15 @@ const config = (state = {}, action) => {
       })
     
     default:
-      return state
+      return state = {
+      carstats: [],
+      config: {
+        speed: 55,
+        temperature: 20,
+        climate: true,
+        wheels: 19
+      }
+    }
   }
 }
 
