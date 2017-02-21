@@ -12,7 +12,7 @@ debugger;
 store.dispatch({
   type: 'CHANGE_CLIMATE'
 });
-
+debugger;
 const counterDefaultVal = {
   speed: {
     title: "Speed",

@@ -2,11 +2,23 @@ const config = (state, action) => {
   debugger;
   switch (action.type) {
     case 'CHANGE_CLIMATE':
-      return Object.assign({}, state, {
-        config:{
-          climate:!state.config.climate
+      // return Object.assign({}, state, {
+      //   config:{
+      //     climate:!state.config.climate,
+      //     speed:state.config.speed,
+      //     temperature:state.config.temperature,
+      //     wheels:state.config.wheels
+      //   }
+        return {
+          ...state,
+          config: {
+            climate:!state.config.climate,
+            speed:state.config.speed,
+            temperature:state.config.temperature,
+            wheels:state.config.wheels
+          }
         }
-      })
+      
     
     default:
       return state = {
