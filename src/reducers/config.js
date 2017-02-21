@@ -1,8 +1,11 @@
 const config = (state, action) => {
+  debugger;
   switch (action.type) {
     case 'CHANGE_CLIMATE':
       return Object.assign({}, state, {
-        config: !config.climate
+        config:{
+          climate:!state.config.climate
+        }
       })
     
     default:

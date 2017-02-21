@@ -9,6 +9,10 @@ import config from './reducers/config';
 //const reducer = combineReducers(reducers);
 const store = createStore(config);
 debugger;
+store.dispatch({
+  type: 'CHANGE_CLIMATE'
+});
+
 const counterDefaultVal = {
   speed: {
     title: "Speed",
