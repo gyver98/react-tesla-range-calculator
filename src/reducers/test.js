@@ -1,8 +1,16 @@
-import { combineReducers } from 'redux';
+//import { combineReducers } from 'redux';
 import { getModelData } from '../services/BatteryService';
 
+
 const initialState = {
-  carstats:[],
+  carstats:[
+    {miles:246, model:"60"},
+    {miles:250, model:"60D"},
+    {miles:297, model:"75"},
+    {miles:306, model:"75D"},
+    {miles:336, model:"90D"},
+    {miles:376, model:"P100D"}
+  ],
   config: {
     speed: 55,
     temperature: 20,
@@ -14,6 +22,16 @@ const initialState = {
 function updateConfig(state = initialState, action) {
   //debugger;
   switch (action.type) {
+    case 'SPEED_UP':
+        return {
+          ...state,
+          config: {
+            climate:state.config.climate,
+            speed:action.value + action.step,
+            temperature:state.config.temperature,
+            wheels:state.config.wheels
+          }
+        }
     case 'CHANGE_CLIMATE':
         return {
           ...state,
@@ -29,29 +47,8 @@ function updateConfig(state = initialState, action) {
           ...state,
           carstats:calculateStats(state)
         }  
-    
     default:
       return state 
-  }
-}
-
-function updateStats(state = initialState, action) {
-  debugger;
-  const newValue = calculateStats(state);
-  switch (action.type) {
-    case 'CHANGE_CLIMATE':
-      return {
-        ...state,
-        carstats:newValue,
-        config: {
-          climate:!state.config.climate,
-          speed:state.config.speed,
-          temperature:state.config.temperature,
-          wheels:state.config.wheels  
-        }
-      }
-    default:
-      return state
   }
 }
 
@@ -66,7 +63,6 @@ function calculateStats(state) {
         miles
       };
     });
-   
 }
 
 // const rootReducer = combineReducers({

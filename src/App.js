@@ -18,6 +18,14 @@ store.dispatch({
   type: 'UPDATE_STATS'
 });
 
+store.dispatch({
+  type: 'SPEED_UP',
+  value: 55,
+  step: 5,
+  maxValue: 70
+});
+
+
 const counterDefaultVal = {
   speed: {
     title: "Speed",
