@@ -6,14 +6,18 @@ import Header from './components/Header';
 import './App.css';
 //import reducers from './reducers';
 //import config from './reducers/config';
-import rootReducer from './reducers/test';
+import updateConfig from './reducers/test';
 //const reducer = combineReducers(reducers);
-const store = createStore(rootReducer);
+const store = createStore(updateConfig);
 debugger;
 store.dispatch({
   type: 'CHANGE_CLIMATE'
 });
 debugger;
+store.dispatch({
+  type: 'UPDATE_STATS'
+});
+
 const counterDefaultVal = {
   speed: {
     title: "Speed",

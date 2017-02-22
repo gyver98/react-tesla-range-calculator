@@ -24,7 +24,17 @@ function updateConfig(state = initialState, action) {
             wheels:state.config.wheels
           }
         }
-      
+    case 'UPDATE_STATS':
+        return {
+          ...state,
+          carstats:calculateStats(state),
+          config: {
+            climate:state.config.climate,
+            speed:state.config.speed,
+            temperature:state.config.temperature,
+            wheels:state.config.wheels
+          }
+        }  
     
     default:
       return state 
@@ -32,17 +42,22 @@ function updateConfig(state = initialState, action) {
 }
 
 function updateStats(state = initialState, action) {
-  //debugger;
+  debugger;
   const newValue = calculateStats(state);
-  return {
-    ...state,
-    newValue,
-    config: {
-      climate:state.config.climate,
-      speed:state.config.speed,
-      temperature:state.config.temperature,
-      wheels:state.config.wheels  
-    }
+  switch (action.type) {
+    case 'CHANGE_CLIMATE':
+      return {
+        ...state,
+        carstats:newValue,
+        config: {
+          climate:!state.config.climate,
+          speed:state.config.speed,
+          temperature:state.config.temperature,
+          wheels:state.config.wheels  
+        }
+      }
+    default:
+      return state
   }
 }
 
@@ -60,9 +75,9 @@ function calculateStats(state) {
    
 }
 
-const rootReducer = combineReducers({
-  updateConfig,
-  updateStats  
-})
+// const rootReducer = combineReducers({
+//   updateConfig,
+//   updateStats  
+// })
 
-export default rootReducer;
+export default updateConfig;
