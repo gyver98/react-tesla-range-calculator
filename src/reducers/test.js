@@ -32,6 +32,36 @@ function updateConfig(state = initialState, action) {
             wheels:state.config.wheels
           }
         }
+    case 'SPEED_DOWN':
+        return {
+          ...state,
+          config: {
+            climate:state.config.climate,
+            speed:action.value - action.step,
+            temperature:state.config.temperature,
+            wheels:state.config.wheels
+          }
+        }
+    case 'TEMPERATURE_UP':
+        return {
+          ...state,
+          config: {
+            climate:state.config.climate,
+            speed:state.config.speed,
+            temperature:action.value + action.step,
+            wheels:state.config.wheels
+          }
+        }
+    case 'TEMPERATURE_DOWN':
+        return {
+          ...state,
+          config: {
+            climate:state.config.climate,
+            speed:state.config.speed,
+            temperature:action.value - action.step,
+            wheels:state.config.wheels
+          }
+        }    
     case 'CHANGE_CLIMATE':
         return {
           ...state,
@@ -40,6 +70,16 @@ function updateConfig(state = initialState, action) {
             speed:state.config.speed,
             temperature:state.config.temperature,
             wheels:state.config.wheels
+          }
+        }
+    case 'CHANGE_WHEEL':
+        return {
+          ...state,
+          config: {
+            climate:state.config.climate,
+            speed:state.config.speed,
+            temperature:state.config.temperature,
+            wheels:action.value
           }
         }
     case 'UPDATE_STATS':
