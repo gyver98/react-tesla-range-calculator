@@ -27,13 +27,7 @@ function updateConfig(state = initialState, action) {
     case 'UPDATE_STATS':
         return {
           ...state,
-          carstats:calculateStats(state),
-          config: {
-            climate:state.config.climate,
-            speed:state.config.speed,
-            temperature:state.config.temperature,
-            wheels:state.config.wheels
-          }
+          carstats:calculateStats(state)
         }  
     
     default:
