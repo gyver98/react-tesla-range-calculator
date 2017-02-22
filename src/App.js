@@ -6,7 +6,7 @@ import Header from './components/Header';
 import './App.css';
 //import reducers from './reducers';
 //import config from './reducers/config';
-import updateConfig from './reducers/test';
+import updateConfig from './reducers/teslaRangeApp';
 //const reducer = combineReducers(reducers);
 const store = createStore(updateConfig);
 debugger;

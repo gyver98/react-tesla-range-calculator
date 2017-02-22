@@ -19,6 +19,7 @@ const initialState = {
   }
 }
 
+
 function updateConfig(state = initialState, action) {
   //debugger;
   switch (action.type) {

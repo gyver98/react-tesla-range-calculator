@@ -1,6 +1,6 @@
 //import { combineReducers } from 'redux';
 import { getModelData } from '../services/BatteryService';
-import updateConfig from './test';
+import updateConfig from './teslaRangeApp';
 
 const initialState = {
   carstats:[
