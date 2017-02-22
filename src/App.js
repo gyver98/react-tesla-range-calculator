@@ -5,9 +5,10 @@ import TeslaBattery from './containers/TeslaBattery';
 import Header from './components/Header';
 import './App.css';
 //import reducers from './reducers';
-import config from './reducers/config';
+//import config from './reducers/config';
+import rootReducer from './reducers/test';
 //const reducer = combineReducers(reducers);
-const store = createStore(config);
+const store = createStore(rootReducer);
 debugger;
 store.dispatch({
   type: 'CHANGE_CLIMATE'
