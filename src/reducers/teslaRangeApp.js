@@ -19,6 +19,18 @@ const initialState = {
   }
 }
 
+function updateStats(state, newState) {
+    // Encapsulate the idea of passing a new object as the first parameter
+    // to Object.assign to ensure we correctly copy data instead of mutating
+    //return Object.assign({}, oldObject, newValues);
+    debugger;
+    return {
+      ...state,
+      config:newState.config,
+      carstats:calculateStats(newState)
+    }  
+}
+
 
 function updateConfig(state = initialState, action) {
   //debugger;
@@ -63,8 +75,8 @@ function updateConfig(state = initialState, action) {
             wheels:state.config.wheels
           }
         }    
-    case 'CHANGE_CLIMATE':
-        return {
+    case 'CHANGE_CLIMATE': {
+      const newState = {
           ...state,
           config: {
             climate:!state.config.climate,
@@ -72,7 +84,12 @@ function updateConfig(state = initialState, action) {
             temperature:state.config.temperature,
             wheels:state.config.wheels
           }
-        }
+      };
+      debugger;
+      return updateStats(state, newState);
+
+    }
+        
     case 'CHANGE_WHEEL':
         return {
           ...state,
