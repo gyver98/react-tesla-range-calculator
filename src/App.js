@@ -1,57 +1,45 @@
 import React, { Component } from 'react';
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import TeslaBattery from './containers/TeslaBattery';
+import TeslaCarContainer from './containers/TeslaCarContainer';
+import TeslaNotice from './components/TeslaNotice';
 import Header from './components/Header';
 import './App.css';
-//import reducers from './reducers';
-//import config from './reducers/config';
-import updateConfig from './reducers/teslaRangeApp';
-//const reducer = combineReducers(reducers);
-const store = createStore(updateConfig);
-debugger;
-store.dispatch({
-  type: 'CHANGE_CLIMATE'
-});
-debugger;
-store.dispatch({
-  type: 'UPDATE_STATS'
-});
+import appReducer from './reducers/teslaRangeApp';
 
-store.dispatch({
-  type: 'SPEED_UP',
-  value: 55,
-  step: 5,
-  maxValue: 70
-});
-
-
-const counterDefaultVal = {
-  speed: {
-    title: "Speed",
-    unit: "mph",
-    step: 5,
-    min: 45,
-    max: 70
-  },
-  temperature: {
-    title: "Outside Temperature",
-    unit: "°",
-    step: 10,
-    min: -10,
-    max: 40
-  }
-}
+const store = createStore(appReducer);
+// const counterDefaultVal = {
+//   speed: {
+//     title: "Speed",
+//     unit: "mph",
+//     step: 5,
+//     min: 45,
+//     max: 70
+//   },
+//   temperature: {
+//     title: "Outside Temperature",
+//     unit: "°",
+//     step: 10,
+//     min: -10,
+//     max: 40
+//   }
+// }
 
 class App extends Component {
   render() {
     return (
+      <Provider store={store}>
       <div>
         <Header />
         <div className="wrapper">
-          <h1>Hello Redux</h1>
+          <form className="tesla-battery">
+            <h1>Range Per Charge</h1>
+            <TeslaCarContainer />
+            <TeslaNotice />
+          </form>
         </div>
       </div>
+      </Provider>
     );
   }
 }
