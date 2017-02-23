@@ -1,6 +1,6 @@
 //import { combineReducers } from 'redux';
 import { getModelData } from '../services/BatteryService';
-import updateConfig from './teslaRangeApp';
+import appReducer from './teslaRangeApp';
 
 const initialState = {
   carstats:[
@@ -125,13 +125,13 @@ const temperatureDownState = {
 describe('test reducer', () => {
   it('should handle initial stat', () => {
     expect(
-      updateConfig(undefined, {})
+      appReducer(undefined, {})
     ).toEqual(initialState)
   })
 
   it('should handle CHANGE_CLIMATE', () => {
     expect(
-      updateConfig(initialState,{
+      appReducer(initialState,{
         type: 'CHANGE_CLIMATE'
       })
     ).toEqual(climateChangeState)
@@ -139,7 +139,7 @@ describe('test reducer', () => {
   
   it('should handle SPEED_UP', () => {
     expect(
-      updateConfig(climateChangeState,{
+      appReducer(climateChangeState,{
         type: 'SPEED_UP',
         value: 55,
         step: 5,
@@ -150,7 +150,7 @@ describe('test reducer', () => {
   
   it('should handle SPEED_DOWN', () => {
     expect(
-      updateConfig(speedUpState,{
+      appReducer(speedUpState,{
         type: 'SPEED_DOWN',
         value: 60,
         step: 5,
@@ -161,7 +161,7 @@ describe('test reducer', () => {
   
   it('should handle CHANGE_WHEEL', () => {
     expect(
-      updateConfig(speedDownState,{
+      appReducer(speedDownState,{
         type: 'CHANGE_WHEEL',
         value: 21
       })
@@ -170,7 +170,7 @@ describe('test reducer', () => {
 
   it('should handle TEMPERATURE_UP', () => {
     expect(
-      updateConfig(wheelChangeState,{
+      appReducer(wheelChangeState,{
         type: 'TEMPERATURE_UP',
         value: 20,
         step: 10,
@@ -180,7 +180,7 @@ describe('test reducer', () => {
   })
   it('should handle TEMPERATURE_DOWN', () => {
     expect(
-      updateConfig(temperatureUpState,{
+      appReducer(temperatureUpState,{
         type: 'TEMPERATURE_DOWN',
         value: 30,
         step: 10,

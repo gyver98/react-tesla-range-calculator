@@ -32,7 +32,7 @@ function updateStats(state, newState) {
 }
 
 
-function updateConfig(state = initialState, action) {
+function appReducer(state = initialState, action) {
   //debugger;
   switch (action.type) {
     case 'SPEED_UP': {
@@ -134,4 +134,4 @@ function calculateStats(state) {
     });
 }
 
-export default updateConfig;
+export default appReducer;
