@@ -36,7 +36,7 @@ function updateConfig(state = initialState, action) {
   //debugger;
   switch (action.type) {
     case 'SPEED_UP': {
-      console.log('speed_up');
+      console.log('SPEED_UP');
       const newState = {
           ...state,
           config: {
@@ -46,11 +46,11 @@ function updateConfig(state = initialState, action) {
             wheels:state.config.wheels
           }
       };
-      console.log(state, newState);
+      //console.log(state, newState);
       return updateStats(state, newState);
     }    
     case 'SPEED_DOWN': {
-      console.log('speed_down');
+      console.log('SPEED_DOWN');
       const newState = {
           ...state,
           config: {
@@ -60,11 +60,12 @@ function updateConfig(state = initialState, action) {
             wheels:state.config.wheels
           }
       };
-      console.log(state, newState);
+      //console.log(state, newState);
       return updateStats(state, newState);
     }        
-    case 'TEMPERATURE_UP':
-        return {
+    case 'TEMPERATURE_UP': {
+      console.log('TEMPERATURE_UP');
+      const newState = {
           ...state,
           config: {
             climate:state.config.climate,
@@ -72,9 +73,13 @@ function updateConfig(state = initialState, action) {
             temperature:action.value + action.step,
             wheels:state.config.wheels
           }
-        }
-    case 'TEMPERATURE_DOWN':
-        return {
+      };
+      //console.log(state, newState);
+      return updateStats(state, newState);
+    }
+    case 'TEMPERATURE_DOWN': {
+      console.log('TEMPERATURE_DOWN');
+      const newState = {
           ...state,
           config: {
             climate:state.config.climate,
@@ -82,8 +87,12 @@ function updateConfig(state = initialState, action) {
             temperature:action.value - action.step,
             wheels:state.config.wheels
           }
-        }    
+      };
+      //console.log(state, newState);
+      return updateStats(state, newState);
+    }        
     case 'CHANGE_CLIMATE': {
+      console.log('CHANGE_CLIMATE');
       const newState = {
           ...state,
           config: {
@@ -93,13 +102,11 @@ function updateConfig(state = initialState, action) {
             wheels:state.config.wheels
           }
       };
-      debugger;
       return updateStats(state, newState);
-
     }
-        
-    case 'CHANGE_WHEEL':
-        return {
+    case 'CHANGE_WHEEL': {
+      console.log('CHANGE_WHEEL');
+      const newState = {
           ...state,
           config: {
             climate:state.config.climate,
@@ -107,12 +114,9 @@ function updateConfig(state = initialState, action) {
             temperature:state.config.temperature,
             wheels:action.value
           }
-        }
-    case 'UPDATE_STATS':
-        return {
-          ...state,
-          carstats:calculateStats(state)
-        }  
+      };
+      return updateStats(state, newState);
+    }
     default:
       return state 
   }
@@ -130,10 +134,5 @@ function calculateStats(state) {
       };
     });
 }
-
-// const rootReducer = combineReducers({
-//   updateConfig,
-//   updateStats  
-// })
 
 export default updateConfig;
