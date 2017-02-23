@@ -96,12 +96,11 @@ function updateConfig(state = initialState, action) {
       const newState = {
           ...state,
           config: {
+            ...state.config,
             climate:!state.config.climate,
-            speed:state.config.speed,
-            temperature:state.config.temperature,
-            wheels:state.config.wheels
           }
       };
+      //console.log(state, newState);
       return updateStats(state, newState);
     }
     case 'CHANGE_WHEEL': {
