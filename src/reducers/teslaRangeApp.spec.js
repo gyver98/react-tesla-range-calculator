@@ -103,27 +103,27 @@ describe('test reducer', () => {
     ).toEqual(climateChangeState)
   })
   
-  // it('should handle SPEED_UP', () => {
-  //   expect(
-  //     updateConfig(climateChangeState,{
-  //       type: 'SPEED_UP',
-  //       value: 55,
-  //       step: 5,
-  //       maxValue: 70
-  //     })
-  //   ).toEqual(speedUpState)
-  // })
+  it('should handle SPEED_UP', () => {
+    expect(
+      updateConfig(climateChangeState,{
+        type: 'SPEED_UP',
+        value: 55,
+        step: 5,
+        maxValue: 70
+      })
+    ).toEqual(speedUpState)
+  })
   
-  // it('should handle SPEED_DOWN', () => {
-  //   expect(
-  //     updateConfig(speedUpState,{
-  //       type: 'SPEED_DOWN',
-  //       value: 60,
-  //       step: 5,
-  //       maxValue: 70
-  //     })
-  //   ).toEqual(speedDownState)
-  // })
+  it('should handle SPEED_DOWN', () => {
+    expect(
+      updateConfig(speedUpState,{
+        type: 'SPEED_DOWN',
+        value: 60,
+        step: 5,
+        maxValue: 70
+      })
+    ).toEqual(speedDownState)
+  })
   
   // it('should handle CHANGE_WHEEL', () => {
   //   expect(
