@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import TeslaCarContainer from './containers/TeslaCarContainer';
+import TeslaStatsContainer from './containers/TeslaStatsContainer';
 import TeslaNotice from './components/TeslaNotice';
 import Header from './components/Header';
 import './App.css';
@@ -35,6 +36,7 @@ class App extends Component {
           <form className="tesla-battery">
             <h1>Range Per Charge</h1>
             <TeslaCarContainer />
+            <TeslaStatsContainer /> 
             <TeslaNotice />
           </form>
         </div>

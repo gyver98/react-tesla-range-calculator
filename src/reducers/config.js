@@ -11,6 +11,7 @@ const config = (state, action) => {
       //   }
         return {
           ...state,
+          carstats: [0],
           config: {
             climate:!state.config.climate,
             speed:state.config.speed,
