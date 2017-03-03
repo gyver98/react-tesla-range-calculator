@@ -1,39 +1,25 @@
 import TeslaCounter from '../components/TeslaCounter';
 import { connect } from 'react-redux';
 import { speedUp, speedDown } from '../actions'
+import { counterDefaultVal } from '../constants/counterDefaultVal';
 
-const counterDefaultVal = {
-  speed: {
-    title: "Speed",
-    unit: "mph",
-    step: 5,
-    min: 45,
-    max: 70
-  },
-  temperature: {
-    title: "Outside Temperature",
-    unit: "°",
-    step: 10,
-    min: -10,
-    max: 40
+const isLessThanMax = (currentValue) => {
+  //debugger;
+  const maxValue = counterDefaultVal.speed.max;
+  const step = counterDefaultVal.speed.step;
+  if(currentValue < maxValue) { 
+    return true 
   }
 }
 
-const increment = (e, title) => {
-    //debugger;
-    e.preventDefault();
-    var currentValue, maxValue, step;
-    if (title === 'Speed') {
-      currentValue = this.state.config.speed;
-      maxValue = this.props.counterDefaultVal.speed.max;
-      step = this.props.counterDefaultVal.speed.step;
-    } else {
-      currentValue = this.state.config.temperature;
-      maxValue = this.props.counterDefaultVal.temperature.max;
-      step = this.props.counterDefaultVal.temperature.step;
-    }   
- 
+const isMoreThanMin = (currentValue) => {
+  //debugger;
+  const minValue = counterDefaultVal.speed.min;
+  const step = counterDefaultVal.speed.step;
+  if(currentValue > minValue) { 
+    return true 
   }
+}
 
 
 const mapStateToProps = (state) => {
@@ -44,12 +30,13 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+  //debugger;
   return {
     increment:(value) => {
-      dispatch(speedUp(value))
+      isLessThanMax(value)? dispatch(speedUp(value)) : null
     },
     decrement:(value) => {
-      dispatch(speedDown(value))
+      isMoreThanMin(value)? dispatch(speedDown(value)) : ''
     }
   }
 }

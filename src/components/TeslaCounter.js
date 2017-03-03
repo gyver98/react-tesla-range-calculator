@@ -14,7 +14,7 @@ const TeslaCounter = (props) => (
           <button 
             onClick={(e) => {
               e.preventDefault();
-              props.increment(props.initValues.title)}} 
+              props.increment(props.currentValue)}} 
             disabled={props.currentValue >= props.initValues.max} 
             tabIndex="-1">
           </button>
