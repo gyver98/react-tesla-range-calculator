@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import TeslaCarContainer from './containers/TeslaCarContainer';
 import TeslaStatsContainer from './containers/TeslaStatsContainer';
 import TeslaSpeedCounterContainer from './containers/TeslaSpeedCounterContainer';
+import TeslaTempCounterContainer from './containers/TeslaTempCounterContainer';
 import TeslaNotice from './components/TeslaNotice';
 import Header from './components/Header';
 import './App.css';
@@ -25,6 +26,9 @@ class App extends Component {
             <TeslaStatsContainer />
             <div className="tesla-controls cf">
               <TeslaSpeedCounterContainer />
+              <div className="tesla-climate-container cf">
+                <TeslaTempCounterContainer />
+              </div>
             </div>   
             <TeslaNotice />
           </form>
