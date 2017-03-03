@@ -3,28 +3,14 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import TeslaCarContainer from './containers/TeslaCarContainer';
 import TeslaStatsContainer from './containers/TeslaStatsContainer';
+import TeslaCounterContainer from './containers/TeslaCounterContainer';
 import TeslaNotice from './components/TeslaNotice';
 import Header from './components/Header';
 import './App.css';
 import appReducer from './reducers/teslaRangeApp';
 
 const store = createStore(appReducer);
-// const counterDefaultVal = {
-//   speed: {
-//     title: "Speed",
-//     unit: "mph",
-//     step: 5,
-//     min: 45,
-//     max: 70
-//   },
-//   temperature: {
-//     title: "Outside Temperature",
-//     unit: "°",
-//     step: 10,
-//     min: -10,
-//     max: 40
-//   }
-// }
+
 
 class App extends Component {
   render() {
@@ -36,7 +22,10 @@ class App extends Component {
           <form className="tesla-battery">
             <h1>Range Per Charge</h1>
             <TeslaCarContainer />
-            <TeslaStatsContainer /> 
+            <TeslaStatsContainer />
+            <div className="tesla-controls cf">
+              <TeslaCounterContainer />
+            </div>   
             <TeslaNotice />
           </form>
         </div>
