@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import TeslaCarContainer from './containers/TeslaCarContainer';
 import TeslaStatsContainer from './containers/TeslaStatsContainer';
-import TeslaCounterContainer from './containers/TeslaCounterContainer';
+import TeslaSpeedCounterContainer from './containers/TeslaSpeedCounterContainer';
 import TeslaNotice from './components/TeslaNotice';
 import Header from './components/Header';
 import './App.css';
@@ -24,7 +24,7 @@ class App extends Component {
             <TeslaCarContainer />
             <TeslaStatsContainer />
             <div className="tesla-controls cf">
-              <TeslaCounterContainer />
+              <TeslaSpeedCounterContainer />
             </div>   
             <TeslaNotice />
           </form>

@@ -16,6 +16,7 @@ const counterDefaultVal = {
 }
 
 export const speedUp = (value) => {
+  debugger;
   return {
     type: 'SPEED_UP',
     value,
