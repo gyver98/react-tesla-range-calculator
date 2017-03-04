@@ -33,7 +33,7 @@ function updateStats(state, newState) {
 
 
 function appReducer(state = initialState, action) {
-  debugger;
+  //debugger;
   switch (action.type) {
     case 'SPEED_UP': {
       console.log('SPEED_UP');

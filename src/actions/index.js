@@ -1,22 +1,7 @@
-const counterDefaultVal = {
-  speed: {
-    title: "Speed",
-    unit: "mph",
-    step: 5,
-    min: 45,
-    max: 70
-  },
-  temperature: {
-    title: "Outside Temperature",
-    unit: "°",
-    step: 10,
-    min: -10,
-    max: 40
-  }
-}
+import { counterDefaultVal } from '../constants/counterDefaultVal';
 
 export const speedUp = (value) => {
-  debugger;
+  //debugger;
   return {
     type: 'SPEED_UP',
     value,
