@@ -1,6 +1,5 @@
 import TeslaCar from '../components/TeslaCar';
 import { connect } from 'react-redux';
-//import { addTodo } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
