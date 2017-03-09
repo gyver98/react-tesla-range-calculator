@@ -88,7 +88,6 @@ function appReducer(state = initialState, action) {
             wheels:state.config.wheels
           }
       };
-      //console.log(state, newState);
       return updateStats(state, newState);
     }        
     case 'CHANGE_CLIMATE': {
@@ -100,7 +99,6 @@ function appReducer(state = initialState, action) {
             climate:!state.config.climate,
           }
       };
-      //console.log(state, newState);
       return updateStats(state, newState);
     }
     case 'CHANGE_WHEEL': {
