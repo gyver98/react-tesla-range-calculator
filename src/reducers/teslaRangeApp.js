@@ -33,7 +33,6 @@ function updateStats(state, newState) {
 
 
 function appReducer(state = initialState, action) {
-  //debugger;
   switch (action.type) {
     case 'SPEED_UP': {
       console.log('SPEED_UP');
@@ -46,7 +45,6 @@ function appReducer(state = initialState, action) {
             wheels:state.config.wheels
           }
       };
-      //console.log(state, newState);
       return updateStats(state, newState);
     }    
     case 'SPEED_DOWN': {
@@ -60,7 +58,6 @@ function appReducer(state = initialState, action) {
             wheels:state.config.wheels
           }
       };
-      //console.log(state, newState);
       return updateStats(state, newState);
     }        
     case 'TEMPERATURE_UP': {
@@ -74,7 +71,6 @@ function appReducer(state = initialState, action) {
             wheels:state.config.wheels
           }
       };
-      //console.log(state, newState);
       return updateStats(state, newState);
     }
     case 'TEMPERATURE_DOWN': {
