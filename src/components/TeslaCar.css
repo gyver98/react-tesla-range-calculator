@@ -4,9 +4,9 @@
   background: #fff url(../assets/tesla.jpg) no-repeat top center;
   background-size: contain; }
 .tesla-car-animation {
-  -webkit-animation: slide-in-elliptic-top-bck 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	-moz-animation: slide-in-elliptic-top-bck 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: slide-in-elliptic-top-bck 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-elliptic-top-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-moz-animation: slide-in-elliptic-top-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-elliptic-top-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
 
 .tesla-wheels {
@@ -16,9 +16,9 @@
   margin: 0 auto; }
 
 .tesla-wheels-animation {
-  -webkit-animation: bounce-in-top 1.8s both;
-	-moz-animation: bounce-in-top 1.8s both;
-	animation: bounce-in-top 1.8s both;
+  -webkit-animation: bounce-in-top 2.3s both;
+	-moz-animation: bounce-in-top 2.3s both;
+	animation: bounce-in-top 2.3s both;
 }
 
 .tesla-wheel {
