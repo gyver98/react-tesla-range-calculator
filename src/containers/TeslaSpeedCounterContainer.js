@@ -25,7 +25,8 @@ import { counterDefaultVal } from '../constants/counterDefaultVal';
 const mapStateToProps = (state) => {
   return {
     currentValue: state.config.speed,
-    initValues: counterDefaultVal.speed
+    initValues: counterDefaultVal.speed,
+    animationEffect: true
   }
 }
 

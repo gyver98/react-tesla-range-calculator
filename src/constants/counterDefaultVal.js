@@ -12,5 +12,6 @@ export const counterDefaultVal = {
     step: 10,
     min: -10,
     max: 40
-  }
+  },
+  animationEffect: false
 }
