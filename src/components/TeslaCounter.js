@@ -5,7 +5,7 @@ class TeslaCounter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      animate: false,
+      animationEffect: false,
       direction: ''
     }
   }
@@ -15,7 +15,7 @@ class TeslaCounter extends React.Component {
     if (this.props.currentValue !== nextProps.currentValue) {
       const direction = this.props.currentValue < nextProps.currentValue ? 'increase' : 'decrese'
       this.setState({
-        animate: true,
+        animationEffect: true,
         direction
       });
       
@@ -23,7 +23,7 @@ class TeslaCounter extends React.Component {
         () => {
           this.setState({
             
-            animate: false
+            animationEffect: false
           })
         }, 500
       );
@@ -35,9 +35,9 @@ class TeslaCounter extends React.Component {
     
   
   render() {
-    const { initValues, animationEffect, currentValue, increment, decrement } = this.props;
-    const { animate, direction } = this.state;
-    const animation = animate
+    const { initValues, currentValue, increment, decrement } = this.props;
+    const { animationEffect, direction } = this.state;
+    const animationClass = animationEffect
                       ? (direction==='increase'? 'flip-in-hor-top' : 'flip-in-hor-bottom')
                       : '';
     // this.setState({
@@ -49,7 +49,7 @@ class TeslaCounter extends React.Component {
         <p className="tesla-counter__title">{initValues.title}</p>
         <div className="tesla-counter__container cf">
           <div className="tesla-counter__item" tabIndex="0">
-            <div className={`${animation}`} >
+            <div className={`${animationClass}`} >
               <p className="tesla-counter__number">
                 {currentValue}
                 <span>{initValues.unit}</span>
