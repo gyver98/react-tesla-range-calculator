@@ -43,9 +43,9 @@
 
 .tesla-stats-animation {
   
-  -webkit-animation: slit-in-horizontal 1s 1s ease-out both;
-	-moz-animation: slit-in-horizontal 1s 1s ease-out both;
-	animation: slit-in-horizontal 1s 1s ease-out both;
+  -webkit-animation: slit-in-horizontal 1.5s 1.3s ease-out both;
+	-moz-animation: slit-in-horizontal 1.5s 1.3s ease-out both;
+	animation: slit-in-horizontal 1.5s 1.3s ease-out both;
 }
 
 /* ----------------------------------------------
